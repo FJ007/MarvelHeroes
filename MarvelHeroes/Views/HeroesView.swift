@@ -9,10 +9,8 @@ import UIKit
 
 class HeroesView: UIViewController {
 
-    // MARK: - IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
 
-    // MARK: - Vars & Let
     private let reuseIdentifier = "HeroCell"
     private let segueDetailView = "segueDetailView"
     
@@ -25,13 +23,12 @@ class HeroesView: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        self.title = "SuperHeroes"
+        self.title = "Super Heroes"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,8 +39,11 @@ class HeroesView: UIViewController {
             }
         }
     }
+    
+    @IBAction func unwindToDetailView(_ unwindSegue: UIStoryboardSegue) {
+        //let sourceViewController = unwindSegue.source
+    }
 }
-
 
 // MARK: - UICollectionViewDataSource
 extension HeroesView: UICollectionViewDataSource {

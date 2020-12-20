@@ -15,7 +15,6 @@ class HeroViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.setupAppearance()
     }
 

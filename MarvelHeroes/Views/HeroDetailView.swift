@@ -9,22 +9,66 @@ import UIKit
 
 class HeroDetailView: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var detailLinkButton: UIButton!
+    @IBOutlet weak var wikiLinkButton: UIButton!
+    @IBOutlet weak var comicsLinkButton: UIButton!
+    
     var heroTest: HeroTest!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print(heroTest.name)
+    // MARK: - Actions
+    @IBAction func goToDetailHero(_ sender: UIButton) {
+        if let url = URL(string: heroTest.urls.detail) {
+            UIApplication.shared.open(url)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func goToWikiHero(_ sender: UIButton) {
+        if let url = URL(string: heroTest.urls.wiki) {
+            UIApplication.shared.open(url)
+        }
     }
-    */
+    
+    @IBAction func goToComicsHero(_ sender: UIButton) {
+        if let url = URL(string: heroTest.urls.comics) {
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    // MARK: - CycleView
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
+        self.imageView.image = UIImage(named: heroTest.image)
+        self.nameLabel.text = heroTest.name
+        self.descriptionLabel.text = heroTest.description
+        
+        setupAppearance()
+    }
+    
+    // MARK: - Utils
+    func setupAppearance() {
+        self.backgroundView.layer.cornerRadius = 12
+        self.backgroundView.layer.masksToBounds = true
+        self.backgroundView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
+        
+        self.backgroundView.layer.shadowColor = UIColor.black.cgColor
+        self.backgroundView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        self.backgroundView.layer.shadowRadius = 10.0
+        self.backgroundView.layer.shadowOpacity = 0.9
+        self.backgroundView.layer.masksToBounds = false
+        
+        self.detailLinkButton.layer.cornerRadius = 6
+        self.detailLinkButton.layer.masksToBounds = true
+        
+        self.wikiLinkButton.layer.cornerRadius = 6
+        self.wikiLinkButton.layer.masksToBounds = true
+        
+        self.comicsLinkButton.layer.cornerRadius = 6
+        self.comicsLinkButton.layer.masksToBounds = true
+    }
 }
