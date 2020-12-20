@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		D9F8E485258F86F00060E490 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8E484258F86F00060E490 /* AppDelegate.swift */; };
 		D9F8E487258F86F00060E490 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8E486258F86F00060E490 /* SceneDelegate.swift */; };
-		D9F8E489258F86F00060E490 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8E488258F86F00060E490 /* ViewController.swift */; };
 		D9F8E48C258F86F00060E490 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F8E48A258F86F00060E490 /* Main.storyboard */; };
 		D9F8E48E258F86F10060E490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9F8E48D258F86F10060E490 /* Assets.xcassets */; };
 		D9F8E491258F86F10060E490 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9F8E48F258F86F10060E490 /* LaunchScreen.storyboard */; };
 		D9F8E49C258F86F20060E490 /* MarvelHeroesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8E49B258F86F20060E490 /* MarvelHeroesTests.swift */; };
 		D9F8E4A7258F86F20060E490 /* MarvelHeroesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8E4A6258F86F20060E490 /* MarvelHeroesUITests.swift */; };
+		D9F8E4BF258FA9E00060E490 /* HeroTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8E4BE258FA9E00060E490 /* HeroTest.swift */; };
+		D9F8E4CA258FAA2A0060E490 /* HeroesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8E4C9258FAA2A0060E490 /* HeroesView.swift */; };
+		D9F8E4CF258FAAAD0060E490 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8E4CE258FAAAD0060E490 /* HeroDetailView.swift */; };
+		D9F8E4D8258FB2D80060E490 /* HeroViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F8E4D6258FB2D80060E490 /* HeroViewCell.swift */; };
+		D9F8E4D9258FB2D80060E490 /* HeroViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F8E4D7258FB2D80060E490 /* HeroViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,6 @@
 		D9F8E481258F86F00060E490 /* MarvelHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8E484258F86F00060E490 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F8E486258F86F00060E490 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D9F8E488258F86F00060E490 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D9F8E48B258F86F00060E490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9F8E48D258F86F10060E490 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9F8E490258F86F10060E490 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		D9F8E4A2258F86F20060E490 /* MarvelHeroesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelHeroesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F8E4A6258F86F20060E490 /* MarvelHeroesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelHeroesUITests.swift; sourceTree = "<group>"; };
 		D9F8E4A8258F86F20060E490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9F8E4BE258FA9E00060E490 /* HeroTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroTest.swift; sourceTree = "<group>"; };
+		D9F8E4C9258FAA2A0060E490 /* HeroesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesView.swift; sourceTree = "<group>"; };
+		D9F8E4CE258FAAAD0060E490 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
+		D9F8E4D6258FB2D80060E490 /* HeroViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewCell.swift; sourceTree = "<group>"; };
+		D9F8E4D7258FB2D80060E490 /* HeroViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +109,10 @@
 			children = (
 				D9F8E484258F86F00060E490 /* AppDelegate.swift */,
 				D9F8E486258F86F00060E490 /* SceneDelegate.swift */,
-				D9F8E488258F86F00060E490 /* ViewController.swift */,
-				D9F8E48A258F86F00060E490 /* Main.storyboard */,
 				D9F8E48D258F86F10060E490 /* Assets.xcassets */,
-				D9F8E48F258F86F10060E490 /* LaunchScreen.storyboard */,
+				D9F8E4BA258FA9750060E490 /* Model */,
+				D9F8E4BB258FA97D0060E490 /* Views */,
+				D9F8E4BD258FA98F0060E490 /* Storyboards */,
 				D9F8E492258F86F10060E490 /* Info.plist */,
 			);
 			path = MarvelHeroes;
@@ -126,6 +134,42 @@
 				D9F8E4A8258F86F20060E490 /* Info.plist */,
 			);
 			path = MarvelHeroesUITests;
+			sourceTree = "<group>";
+		};
+		D9F8E4BA258FA9750060E490 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8E4BE258FA9E00060E490 /* HeroTest.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D9F8E4BB258FA97D0060E490 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8E4DD258FB2FC0060E490 /* Cells */,
+				D9F8E4C9258FAA2A0060E490 /* HeroesView.swift */,
+				D9F8E4CE258FAAAD0060E490 /* HeroDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D9F8E4BD258FA98F0060E490 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8E48A258F86F00060E490 /* Main.storyboard */,
+				D9F8E48F258F86F10060E490 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		D9F8E4DD258FB2FC0060E490 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8E4D6258FB2D80060E490 /* HeroViewCell.swift */,
+				D9F8E4D7258FB2D80060E490 /* HeroViewCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +277,7 @@
 			files = (
 				D9F8E491258F86F10060E490 /* LaunchScreen.storyboard in Resources */,
 				D9F8E48E258F86F10060E490 /* Assets.xcassets in Resources */,
+				D9F8E4D9258FB2D80060E490 /* HeroViewCell.xib in Resources */,
 				D9F8E48C258F86F00060E490 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,8 +303,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9F8E489258F86F00060E490 /* ViewController.swift in Sources */,
+				D9F8E4CF258FAAAD0060E490 /* HeroDetailView.swift in Sources */,
+				D9F8E4CA258FAA2A0060E490 /* HeroesView.swift in Sources */,
+				D9F8E4BF258FA9E00060E490 /* HeroTest.swift in Sources */,
 				D9F8E485258F86F00060E490 /* AppDelegate.swift in Sources */,
+				D9F8E4D8258FB2D80060E490 /* HeroViewCell.swift in Sources */,
 				D9F8E487258F86F00060E490 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
