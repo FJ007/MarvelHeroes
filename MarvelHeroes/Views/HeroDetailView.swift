@@ -42,12 +42,17 @@ class HeroDetailView: UIViewController {
     // MARK: - CycleView
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.imageView.image = UIImage(named: heroTest.image)
+        showHeroData()
+        setupAppearance()
+    }
+    
+    // MARK: - Funcs
+    func showHeroData() {
+        if let image = UIImage(named: heroTest.image) {
+            self.imageView.image = image
+        }
         self.nameLabel.text = heroTest.name
         self.descriptionLabel.text = heroTest.description
-        
-        setupAppearance()
     }
     
     // MARK: - Utils
@@ -58,7 +63,7 @@ class HeroDetailView: UIViewController {
         
         self.backgroundView.layer.shadowColor = UIColor.black.cgColor
         self.backgroundView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        self.backgroundView.layer.shadowRadius = 10.0
+        self.backgroundView.layer.shadowRadius = 10
         self.backgroundView.layer.shadowOpacity = 0.9
         self.backgroundView.layer.masksToBounds = false
         

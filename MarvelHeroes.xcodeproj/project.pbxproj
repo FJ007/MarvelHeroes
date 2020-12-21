@@ -112,7 +112,7 @@
 				D9F8E48D258F86F10060E490 /* Assets.xcassets */,
 				D9F8E4BA258FA9750060E490 /* Model */,
 				D9F8E4BB258FA97D0060E490 /* Views */,
-				D9F8E4BD258FA98F0060E490 /* Storyboards */,
+				D9F8E4F8259013000060E490 /* Storyboards */,
 				D9F8E492258F86F10060E490 /* Info.plist */,
 			);
 			path = MarvelHeroes;
@@ -154,15 +154,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		D9F8E4BD258FA98F0060E490 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				D9F8E48A258F86F00060E490 /* Main.storyboard */,
-				D9F8E48F258F86F10060E490 /* LaunchScreen.storyboard */,
-			);
-			name = Storyboards;
-			sourceTree = "<group>";
-		};
 		D9F8E4DD258FB2FC0060E490 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +161,15 @@
 				D9F8E4D7258FB2D80060E490 /* HeroViewCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		D9F8E4F8259013000060E490 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D9F8E48A258F86F00060E490 /* Main.storyboard */,
+				D9F8E48F258F86F10060E490 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

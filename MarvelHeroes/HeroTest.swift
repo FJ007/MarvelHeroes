@@ -28,8 +28,9 @@ final class HeroesTest {
         let spiderman = HeroTest(name: "Spider-man",
                                  description:
                                 """
-                                Spider-Man es un superhéroe ficticio creado por los escritores y editores Stan Lee y Steve Ditko. Apareció por primera vez en el
-                                cómic de antología Amazing Fantasy # 15, en la Edad de Plata de los cómics.
+                                Spider-Man es un superhéroe ficticio creado por los escritores y editores Stan Lee y Steve Ditko.
+                                Apareció por primera vez en el cómic de antología Amazing Fantasy # 15, en la Edad de Plata de los
+                                cómics.
                                 """,
                                  image: "spiderman-test",
                                  urls: Links(
@@ -40,7 +41,9 @@ final class HeroesTest {
         let captainAmerica = HeroTest(name: "Captain America",
                               description:
                                 """
-                                Tras tres meses de someterse a un programa de entrenamiento físico y táctico, encomiendan a Steve Rogers su primera misión como Capitán América. Armado con un escudo indestructible, emprende la guerra contra la perversa organización HYDRA.
+                                Tras tres meses de someterse a un programa de entrenamiento físico y táctico, encomiendan a Steve Rogers
+                                su primera misión como Capitán América. Armado con un escudo indestructible, emprende la guerra contra
+                                la perversa organización HYDRA.
                                 """,
                               image: "captain-test",
                               urls: Links(
@@ -51,8 +54,9 @@ final class HeroesTest {
         let ironman = HeroTest(name: "Iron Man",
                                description:
                                 """
-                                Iron Man es un superhéroe ficticio que aparece en los cómics estadounidenses publicados por Marvel Comics. El personaje fue cocreado
-                                por el escritor y editor Stan Lee, desarrollado por el guionista Larry Lieber y diseñado por los artistas Don Heck y Jack Kirby.
+                                Iron Man es un superhéroe ficticio que aparece en los cómics estadounidenses publicados por Marvel
+                                Comics. El personaje fue cocreado por el escritor y editor Stan Lee, desarrollado por el guionista Larry
+                                Lieber y diseñado por los artistas Don Heck y Jack Kirby.
                                 """,
                                image: "ironman-test",
                                urls: Links(
@@ -65,4 +69,5 @@ final class HeroesTest {
     }
 }
 
+/// Variable Global para Testing
 let heroesTest = HeroesTest()

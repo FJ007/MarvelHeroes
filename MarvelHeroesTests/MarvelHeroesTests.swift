@@ -10,24 +10,38 @@ import XCTest
 
 class MarvelHeroesTests: XCTestCase {
 
+    var data: HeroesTest!
+    var collectionHeroesView: HeroesView!
+    
+    // MARK: - CycleTest
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        data = HeroesTest()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        collectionHeroesView = try XCTUnwrap(storyboard.instantiateViewController(withIdentifier: "HeroesViewID") as? HeroesView)
+        
+        collectionHeroesView.loadView()
+        collectionHeroesView.viewDidLoad()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        data = nil
+        collectionHeroesView = nil
+    }
+    
+    // MARK: - Tests
+    /// Verificamos que nuestro array de datos no está vacio
+    func testDataJSON() {
+        XCTAssertFalse(data.heroes.isEmpty, "Datos no recibidos del servidor")
+    }
+    
+    /// Comprobamos si las rows totales de la collection coinciden con nuestro array de datos
+    func testCollectionViewRows() {
+        XCTAssertEqual(getTotalRowsCollection(), data.heroes.count, "No coincieden el número de datos (row) de la vista con el modelo")
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // MARK: - Utils
+    func getTotalRowsCollection() -> Int {
+        collectionHeroesView.collectionView.numberOfItems(inSection: 0)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

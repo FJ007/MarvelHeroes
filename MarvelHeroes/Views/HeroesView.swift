@@ -18,12 +18,9 @@ class HeroesView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.collectionView.register(UINib(nibName: "HeroViewCell", bundle: nil),
-                                     forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        
         self.title = "Super Heroes"
+        self.navigationController?.navigationBar.accessibilityIdentifier = "InitAppListHeroesNavBar"
+        self.setupCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +40,14 @@ class HeroesView: UIViewController {
     @IBAction func unwindToDetailView(_ unwindSegue: UIStoryboardSegue) {
         //let sourceViewController = unwindSegue.source
     }
+    
+    // MARK: - Funcs
+    func setupCollectionView() {
+        self.collectionView.register(UINib(nibName: "HeroViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.accessibilityIdentifier = "InitAppCollectionView"
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -58,8 +63,11 @@ extension HeroesView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HeroViewCell
         
-        let imageString = heroesTest.heroes[indexPath.row].image
-        cell.imageView.image = UIImage(named: imageString)
+        if let image = UIImage(named: heroesTest.heroes[indexPath.row].image) {
+            cell.imageView.image = image
+        } else {
+            cell.imageView.image = UIImage(named: "placeholder")
+        }
         cell.heroLabel.text = heroesTest.heroes[indexPath.row].name
         
         return cell
