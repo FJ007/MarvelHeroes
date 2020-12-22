@@ -29,8 +29,7 @@ class HeroesView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         heroes.getAllHeroes()
-        sleep(2)
-        self.activityIndicator.startAnimating()
+        reloadDataCollectionView()
     }
 
     // MARK: - Navigation
@@ -56,6 +55,14 @@ class HeroesView: UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.accessibilityIdentifier = "InitAppCollectionView"
+    }
+    
+    fileprivate func reloadDataCollectionView() {
+        self.activityIndicator.startAnimating()
+        NetworkinkgProvider.shared.dispatchGroup.notify(queue: .main) {
+            self.collectionView.reloadData()
+            self.activityIndicator.stopAnimating()
+        }
     }
     
     // MARK: - Utils

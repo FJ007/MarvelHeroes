@@ -13,14 +13,17 @@ final class NetworkinkgProvider {
     static let shared = NetworkinkgProvider()
     
     var imageCache = NSCache<AnyObject, AnyObject>()
+    let dispatchGroup = DispatchGroup()
     var searchCharacters: SearchCharacters?
     
     func getAllHeroes() {
         if let url = URL(string: DataAPI.getAllHeroesURL()) {
+            dispatchGroup.enter()
             loadNetworkData(url: url) { data in
                 let dataJSON = try? JSONDecoder().decode(SearchCharacters.self, from: data)
                     if let result = dataJSON {
                         self.searchCharacters = result
+                        self.dispatchGroup.leave()
                     }
             }
         } else {
