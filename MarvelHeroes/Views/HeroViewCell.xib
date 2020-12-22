@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="175" height="250"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spiderman-test" translatesAutoresizingMaskIntoConstraints="NO" id="KnI-WC-Tp0">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="KnI-WC-Tp0">
                         <rect key="frame" x="0.0" y="0.0" width="175" height="250"/>
                     </imageView>
                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pW1-98-JcO">
@@ -68,7 +68,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="spiderman-test" width="1024" height="1024"/>
+        <image name="placeholder" width="796" height="796"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

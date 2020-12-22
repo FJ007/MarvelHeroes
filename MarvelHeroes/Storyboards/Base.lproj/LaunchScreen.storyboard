@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen-logo" translatesAutoresizingMaskIntoConstraints="NO" id="CQj-Yv-t9f" userLabel="ImageView Logo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="CQj-Yv-t9f" userLabel="ImageView Logo">
                                 <rect key="frame" x="82" y="373" width="250" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="fnc-Px-aca"/>
@@ -38,7 +38,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchscreen-logo" width="526" height="188"/>
+        <image name="logo" width="526" height="188"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

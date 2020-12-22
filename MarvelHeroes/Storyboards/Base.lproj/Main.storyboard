@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H9n-qh-HHD">
-                                <rect key="frame" x="8" y="88" width="359" height="698"/>
+                                <rect key="frame" x="8" y="88" width="359" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="xm6-St-u0d">
                                     <size key="itemSize" width="175" height="250"/>
@@ -42,24 +42,30 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="0df-Y8-cAc">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0df-Y8-cAc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="H8s-2I-i8O"/>
                             <constraint firstItem="H9n-qh-HHD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dtP-Of-oCV"/>
+                            <constraint firstItem="0df-Y8-cAc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g8u-RJ-TAy"/>
                             <constraint firstItem="H9n-qh-HHD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="hJV-Vn-tDo"/>
                             <constraint firstItem="H9n-qh-HHD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-8" id="maQ-Qx-1GD"/>
-                            <constraint firstItem="H9n-qh-HHD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="8" id="y2C-gc-VeW"/>
+                            <constraint firstItem="H9n-qh-HHD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="y2C-gc-VeW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dke-MP-PTF"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="0df-Y8-cAc" id="7as-Dq-m8l"/>
                         <outlet property="collectionView" destination="H9n-qh-HHD" id="Td5-8q-X23"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="109.82142857142857"/>
+            <point key="canvasLocation" x="1047.2" y="109.35960591133005"/>
         </scene>
         <!--Hero Detail View-->
         <scene sceneID="7dX-Bm-2x9">
@@ -69,13 +75,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spiderman-test" translatesAutoresizingMaskIntoConstraints="NO" id="aFX-jl-yZo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="aFX-jl-yZo">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="4Q0-yB-irJ"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lim-ws-Zfg" userLabel="ButtonClose">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lim-ws-Zfg" userLabel="ButtonClose">
                                 <rect key="frame" x="342" y="8" width="25" height="25"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ButtonCloseHeroDetailView"/>
                                 <constraints>
@@ -95,10 +101,10 @@
                                 <rect key="frame" x="0.0" y="392" width="375" height="366"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nvK-s2-khu" userLabel="Stack View Links">
-                                        <rect key="frame" x="187" y="8" width="180" height="27"/>
+                                        <rect key="frame" x="167" y="8" width="200" height="27"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdK-7m-ohm">
-                                                <rect key="frame" x="0.0" y="0.0" width="54.666666666666664" height="27"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="61.333333333333336" height="27"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
                                                 <state key="normal" title="Detail">
@@ -109,7 +115,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEg-uR-5IE">
-                                                <rect key="frame" x="62.666666666666657" y="0.0" width="54.666666666666657" height="27"/>
+                                                <rect key="frame" x="69.333333333333343" y="0.0" width="61.333333333333343" height="27"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
                                                 <state key="normal" title="Wiki">
@@ -120,7 +126,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMx-Vu-9rn">
-                                                <rect key="frame" x="125.33333333333333" y="0.0" width="54.666666666666671" height="27"/>
+                                                <rect key="frame" x="138.66666666666669" y="0.0" width="61.333333333333343" height="27"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="12"/>
                                                 <state key="normal" title="Comics">
@@ -132,7 +138,7 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="GGq-xx-9bv"/>
+                                            <constraint firstAttribute="width" constant="200" id="GGq-xx-9bv"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="z7B-Df-ekd" userLabel="Stack View Info">
@@ -181,6 +187,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="CVh-5z-XZi" id="ckV-dM-9pw"/>
+                        <outlet property="closedButton" destination="Lim-ws-Zfg" id="Aqs-gT-j9o"/>
                         <outlet property="comicsLinkButton" destination="gMx-Vu-9rn" id="WGd-oJ-2yn"/>
                         <outlet property="descriptionLabel" destination="upU-nP-JB7" id="Sc8-2m-QjH"/>
                         <outlet property="detailLinkButton" destination="tdK-7m-ohm" id="1dw-I4-iek"/>
@@ -214,7 +221,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="spiderman-test" width="1024" height="1024"/>
+        <image name="placeholder" width="796" height="796"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.88627450980392153" green="0.0" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

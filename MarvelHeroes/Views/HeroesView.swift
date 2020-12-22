@@ -10,21 +10,27 @@ import UIKit
 class HeroesView: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     private let reuseIdentifier = "HeroCell"
     private let segueDetailView = "segueDetailView"
     
-    // MARK: - CycleView
+    let heroes = NetworkinkgProvider.shared
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Super Heroes"
+        self.title = "SuperHeroes"
         self.navigationController?.navigationBar.accessibilityIdentifier = "InitAppListHeroesNavBar"
         self.setupCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        heroes.getAllHeroes()
+        sleep(2)
+        self.activityIndicator.startAnimating()
     }
 
     // MARK: - Navigation
@@ -32,7 +38,10 @@ class HeroesView: UIViewController {
         if segue.identifier == segueDetailView {
             if let selectedIndexPath = sender as? NSIndexPath,
                let detailView = segue.destination as? HeroDetailView {
-                detailView.heroTest = heroesTest.heroes[selectedIndexPath.row] as HeroTest
+                detailView.hero = (heroes.searchCharacters?.data.results[selectedIndexPath.row])! as Hero
+                
+                /// Testing  Data Debug
+                //detailView.heroTest = heroesTest.heroes[selectedIndexPath.row] as HeroTest
             }
         }
     }
@@ -48,6 +57,11 @@ class HeroesView: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.accessibilityIdentifier = "InitAppCollectionView"
     }
+    
+    // MARK: - Utils
+    func getImageURL(row: Int) -> String? {
+        heroes.searchCharacters?.data.results[row].thumbnail.getImageURL()
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -57,19 +71,25 @@ extension HeroesView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        heroesTest.heroes.count
+        heroes.searchCharacters?.data.results.count ?? 0
+        
+        /// Testing Data Debug
+        //heroesTest.heroes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HeroViewCell
-        
-        if let image = UIImage(named: heroesTest.heroes[indexPath.row].image) {
-            cell.imageView.image = image
-        } else {
-            cell.imageView.image = UIImage(named: "placeholder")
+
+        if let url = URL(string: getImageURL(row: indexPath.row)!) {
+            heroes.loadNetworkImage(url: url) { image in
+                cell.imageView.image = image
+            }
         }
-        cell.heroLabel.text = heroesTest.heroes[indexPath.row].name
-        
+        cell.heroLabel.text = heroes.searchCharacters?.data.results[indexPath.row].name ?? ""
+
+        /// Testing Data Debug
+        //testDataCollectionView(cell: cell, row: indexPath.row)
         return cell
     }
 }
@@ -81,3 +101,13 @@ extension HeroesView: UICollectionViewDelegate {
     }
 }
 
+
+// MARK: - Testing Debug
+extension HeroesView {
+    func testDataCollectionView(cell: HeroViewCell, row: Int) {
+        if let image = UIImage(named: heroesTest.heroes[row].image) {
+            cell.imageView.image = image
+        }
+        cell.heroLabel.text = heroesTest.heroes[row].name
+    }
+}

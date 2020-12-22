@@ -10,12 +10,12 @@ import XCTest
 
 class MarvelHeroesTests: XCTestCase {
 
-    var data: HeroesTest!
+    var characters: SearchCharacters!
     var collectionHeroesView: HeroesView!
     
-    // MARK: - CycleTest
+    // MARK: - Lifecycle
     override func setUpWithError() throws {
-        data = HeroesTest()
+        characters = try XCTUnwrap(NetworkinkgProvider.shared.searchCharacters)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         collectionHeroesView = try XCTUnwrap(storyboard.instantiateViewController(withIdentifier: "HeroesViewID") as? HeroesView)
@@ -25,19 +25,19 @@ class MarvelHeroesTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        data = nil
+        characters = nil
         collectionHeroesView = nil
     }
     
     // MARK: - Tests
     /// Verificamos que nuestro array de datos no está vacio
     func testDataJSON() {
-        XCTAssertFalse(data.heroes.isEmpty, "Datos no recibidos del servidor")
+        XCTAssertFalse(characters.data.results.isEmpty, "Datos no recibidos del servidor")
     }
     
     /// Comprobamos si las rows totales de la collection coinciden con nuestro array de datos
     func testCollectionViewRows() {
-        XCTAssertEqual(getTotalRowsCollection(), data.heroes.count, "No coincieden el número de datos (row) de la vista con el modelo")
+        XCTAssertEqual(getTotalRowsCollection(), characters.data.results.count, "No coincieden el número de datos (row) de la vista con el modelo")
     }
 
     // MARK: - Utils

@@ -11,7 +11,7 @@ class MarvelHeroesUITests: XCTestCase {
 
     var app = XCUIApplication()
     
-    // MARK: - CycleTest
+    // MARK: - Lifecycle
     override func setUpWithError() throws {
         continueAfterFailure = false
         app.launch()
@@ -21,7 +21,7 @@ class MarvelHeroesUITests: XCTestCase {
         
     }
 
-    // MARK: - Test
+    // MARK: - Tests
     /// Comprobamos que la app arranca y carga el primer navigationBar y el collectionView
     func testRunApp() {
         XCTAssert(app.navigationBars["InitAppListHeroesNavBar"].exists)
