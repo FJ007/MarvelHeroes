@@ -96,31 +96,24 @@ class HeroDetailView: UIViewController {
     
     // MARK: - Utils
     fileprivate func setupAppearance() {
-        self.backgroundView.layer.cornerRadius = 12
-        self.backgroundView.layer.masksToBounds = true
         self.backgroundView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
-        
-        self.backgroundView.layer.shadowColor = UIColor.black.cgColor
-        self.backgroundView.layer.shadowOffset = CGSize(width: 5, height: 5)
-        self.backgroundView.layer.shadowRadius = 10
-        self.backgroundView.layer.shadowOpacity = 0.9
-        self.backgroundView.layer.masksToBounds = false
+        AppearanceCustom.setCornerRadius(to: self.backgroundView, cornerRadius: 12)
+        AppearanceCustom.setShadow(to: self.backgroundView,
+                                      shadowColor: UIColor.black.cgColor,
+                                      shadowOffset: CGSize(width: 5, height: 5),
+                                      shadowRadius: 10,
+                                      shadowOpacity: 0.9)
         
         self.closedButton.alpha = 0.9
-        self.closedButton.layer.shadowColor = UIColor.black.cgColor
-        self.closedButton.layer.shadowOffset = CGSize(width: 1, height: 1)
-        self.closedButton.layer.shadowRadius = 1.0
-        self.closedButton.layer.shadowOpacity = 0.5
-        self.closedButton.layer.masksToBounds = false
+        AppearanceCustom.setShadow(to: self.closedButton,
+                                   shadowColor: UIColor.black.cgColor,
+                                   shadowOffset: CGSize(width: 1, height: 1),
+                                   shadowRadius: 1.0,
+                                   shadowOpacity: 0.5)
         
-        self.detailLinkButton.layer.cornerRadius = 6
-        self.detailLinkButton.layer.masksToBounds = true
-        
-        self.wikiLinkButton.layer.cornerRadius = 6
-        self.wikiLinkButton.layer.masksToBounds = true
-        
-        self.comicsLinkButton.layer.cornerRadius = 6
-        self.comicsLinkButton.layer.masksToBounds = true
+        AppearanceCustom.setCornerRadius(to: self.detailLinkButton, cornerRadius: 12)
+        AppearanceCustom.setCornerRadius(to: self.wikiLinkButton, cornerRadius: 12)
+        AppearanceCustom.setCornerRadius(to: self.comicsLinkButton, cornerRadius: 12)
     }
     
     private func dismissButtons() {

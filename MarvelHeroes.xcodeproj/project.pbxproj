@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D9241B0A25936BBD000CF353 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D9241B0C25936BBD000CF353 /* Localizable.strings */; };
+		D9241B1625937668000CF353 /* AppearanceCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9241B1525937668000CF353 /* AppearanceCustom.swift */; };
 		D94FD80225925C1500A652CE /* SearchCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FD80125925C1500A652CE /* SearchCharacters.swift */; };
 		D94FD80725925C8100A652CE /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FD80625925C8100A652CE /* Comics.swift */; };
 		D94FD80F25925CEC00A652CE /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FD80E25925CEC00A652CE /* Series.swift */; };
@@ -52,6 +53,7 @@
 		D9241B0125936ADC000CF353 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		D9241B0B25936BBD000CF353 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9241B1025936BC2000CF353 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D9241B1525937668000CF353 /* AppearanceCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceCustom.swift; sourceTree = "<group>"; };
 		D94FD80125925C1500A652CE /* SearchCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCharacters.swift; sourceTree = "<group>"; };
 		D94FD80625925C8100A652CE /* Comics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
 		D94FD80E25925CEC00A652CE /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9241B142593763B000CF353 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D9241B1525937668000CF353 /* AppearanceCustom.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D9BC95C12590D04E00506BF5 /* Testing */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +158,7 @@
 				D9F8E484258F86F00060E490 /* AppDelegate.swift */,
 				D9F8E486258F86F00060E490 /* SceneDelegate.swift */,
 				D9F8E48D258F86F10060E490 /* Assets.xcassets */,
+				D9241B142593763B000CF353 /* Helpers */,
 				D9BC95D12590DCF000506BF5 /* Networks */,
 				D9F8E4BA258FA9750060E490 /* Model */,
 				D9F8E4BB258FA97D0060E490 /* Views */,
@@ -361,6 +372,7 @@
 				D94FD80725925C8100A652CE /* Comics.swift in Sources */,
 				D94FD80F25925CEC00A652CE /* Series.swift in Sources */,
 				D9F8E485258F86F00060E490 /* AppDelegate.swift in Sources */,
+				D9241B1625937668000CF353 /* AppearanceCustom.swift in Sources */,
 				D9BC95C32590D06B00506BF5 /* Hero.swift in Sources */,
 				D9F8E4D8258FB2D80060E490 /* HeroViewCell.swift in Sources */,
 				D9F8E487258F86F00060E490 /* SceneDelegate.swift in Sources */,

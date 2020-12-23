@@ -16,8 +16,7 @@ final class NetworkinkgProvider {
     let dispatchGroup = DispatchGroup()
     var searchCharacters: SearchCharacters?
     
-    /// Obtenemos todos los superhéroes de la API
-    func getAllHeroes() {
+    func fetchHeroes() {
         if let url = URL(string: DataAPI.getAllHeroesURL()) {
             dispatchGroup.enter()
             loadNetworkData(url: url) { data in
