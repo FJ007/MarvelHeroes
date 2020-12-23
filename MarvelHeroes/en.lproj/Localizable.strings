@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  MarvelHeroes
+
+  Created by Javier Fernández on 23/12/20.
+  
+*/
+
+// HeroesView
+titleHeroesView = "SuperHeroes";
+
+// HeroDetailView
+heroDescriptionViewDetail = "No description available.";

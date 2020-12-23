@@ -49,8 +49,8 @@ class HeroDetailView: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        showHeroData()
-        setupAppearance()
+        self.showHeroData()
+        self.setupAppearance()
         
         /// Testing Data Debug
         //testDataDetailView()
@@ -58,8 +58,7 @@ class HeroDetailView: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateUI()
-        
+        self.updateUI()
     }
     
     // MARK: - Funcs
@@ -71,16 +70,14 @@ class HeroDetailView: UIViewController {
         }
         self.nameLabel.text = hero.name
         if hero.description == "" {
-            self.descriptionLabel.text = "Currently there are not information."
+            self.descriptionLabel.text = NSLocalizedString("heroDescriptionViewDetail", comment: "Hero Description")
         } else {
             self.descriptionLabel.text = hero.description
         }
     }
     
     fileprivate func updateUI() {
-        self.detailLinkButton.isHidden = true
-        self.wikiLinkButton.isHidden = true
-        self.comicsLinkButton.isHidden = true
+        self.dismissButtons()
         
         for item in hero.urls {
             switch item.type {
@@ -98,7 +95,7 @@ class HeroDetailView: UIViewController {
     }
     
     // MARK: - Utils
-    func setupAppearance() {
+    fileprivate func setupAppearance() {
         self.backgroundView.layer.cornerRadius = 12
         self.backgroundView.layer.masksToBounds = true
         self.backgroundView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
@@ -124,6 +121,12 @@ class HeroDetailView: UIViewController {
         
         self.comicsLinkButton.layer.cornerRadius = 6
         self.comicsLinkButton.layer.masksToBounds = true
+    }
+    
+    private func dismissButtons() {
+        self.detailLinkButton.isHidden = true
+        self.wikiLinkButton.isHidden = true
+        self.comicsLinkButton.isHidden = true
     }
 }
 

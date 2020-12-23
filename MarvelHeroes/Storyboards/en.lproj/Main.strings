@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "Wiki"; ObjectID = "NEg-uR-5IE"; */
+"NEg-uR-5IE.normalTitle" = "Wiki";
+
+/* Class = "UIButton"; normalTitle = "Comics"; ObjectID = "gMx-Vu-9rn"; */
+"gMx-Vu-9rn.normalTitle" = "Comics";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "hEq-Gn-Rzl"; */
+"hEq-Gn-Rzl.text" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Detail"; ObjectID = "tdK-7m-ohm"; */
+"tdK-7m-ohm.normalTitle" = "Detail";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "upU-nP-JB7"; */
+"upU-nP-JB7.text" = "Description";

@@ -21,7 +21,7 @@ class HeroesView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "SuperHeroes"
+        self.title = NSLocalizedString("titleHeroesView", comment: "Title Navigation Bar")
         self.navigationController?.navigationBar.accessibilityIdentifier = "InitAppListHeroesNavBar"
         self.setupCollectionView()
     }
@@ -29,7 +29,7 @@ class HeroesView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         heroes.getAllHeroes()
-        reloadDataCollectionView()
+        self.reloadDataCollectionView()
     }
 
     // MARK: - Navigation
@@ -50,7 +50,7 @@ class HeroesView: UIViewController {
     }
     
     // MARK: - Funcs
-    func setupCollectionView() {
+    fileprivate func setupCollectionView() {
         self.collectionView.register(UINib(nibName: "HeroViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.delegate = self
         self.collectionView.dataSource = self

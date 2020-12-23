@@ -16,6 +16,7 @@ final class NetworkinkgProvider {
     let dispatchGroup = DispatchGroup()
     var searchCharacters: SearchCharacters?
     
+    /// Obtenemos todos los superhéroes de la API
     func getAllHeroes() {
         if let url = URL(string: DataAPI.getAllHeroesURL()) {
             dispatchGroup.enter()
@@ -51,15 +52,22 @@ extension NetworkinkgProvider {
     }
     
     func loadNetworkImage (url: URL, completion: @escaping (UIImage) -> Void) {
-        if let imageCache = imageCache.object(forKey: url as AnyObject) as? UIImage {
-            completion(imageCache)
-            return
+        if url.absoluteString.contains("image_not_available") {
+            if let image = UIImage(named: "image-not-available") {
+                completion(image)
+            }
         }
-        loadNetworkData(url: url) { data in
-            if let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self.imageCache.setObject(image, forKey: url as AnyObject)
-                    completion(image)
+        else {
+            if let imageCache = imageCache.object(forKey: url as AnyObject) as? UIImage {
+                completion(imageCache)
+                return
+            }
+            loadNetworkData(url: url) { data in
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.imageCache.setObject(image, forKey: url as AnyObject)
+                        completion(image)
+                    }
                 }
             }
         }

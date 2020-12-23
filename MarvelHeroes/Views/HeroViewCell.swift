@@ -19,7 +19,7 @@ class HeroViewCell: UICollectionViewCell {
     }
 
     // MARK: - Utils
-    func setupAppearance() {
+    fileprivate func setupAppearance() {
         self.contentView.layer.cornerRadius = 12
         self.contentView.layer.masksToBounds = true
         
