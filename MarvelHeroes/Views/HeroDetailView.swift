@@ -98,22 +98,28 @@ class HeroDetailView: UIViewController {
     fileprivate func setupAppearance() {
         self.backgroundView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
         AppearanceCustom.setCornerRadius(to: self.backgroundView, cornerRadius: 12)
-        AppearanceCustom.setShadow(to: self.backgroundView,
+        AppearanceCustom.setShadow(to: [self.backgroundView],
                                       shadowColor: UIColor.black.cgColor,
                                       shadowOffset: CGSize(width: 5, height: 5),
                                       shadowRadius: 10,
                                       shadowOpacity: 0.9)
         
         self.closedButton.alpha = 0.9
-        AppearanceCustom.setShadow(to: self.closedButton,
+        AppearanceCustom.setShadow(to: [self.closedButton],
                                    shadowColor: UIColor.black.cgColor,
                                    shadowOffset: CGSize(width: 1, height: 1),
                                    shadowRadius: 1.0,
                                    shadowOpacity: 0.5)
-        
+
         AppearanceCustom.setCornerRadius(to: self.detailLinkButton, cornerRadius: 12)
-        AppearanceCustom.setCornerRadius(to: self.wikiLinkButton, cornerRadius: 12)
         AppearanceCustom.setCornerRadius(to: self.comicsLinkButton, cornerRadius: 12)
+        AppearanceCustom.setCornerRadius(to: self.wikiLinkButton, cornerRadius: 12)
+        
+        AppearanceCustom.setShadow(to: [self.detailLinkButton, self.comicsLinkButton, self.wikiLinkButton],
+                                   shadowColor: UIColor.black.cgColor,
+                                   shadowOffset: CGSize(width: 1, height: 1),
+                                   shadowRadius: 1.0,
+                                   shadowOpacity: 0.2)
     }
     
     private func dismissButtons() {

@@ -14,11 +14,13 @@ struct AppearanceCustom {
         view.layer.masksToBounds = true
     }
     
-    static func setShadow(to view: UIView, shadowColor: CGColor, shadowOffset: CGSize, shadowRadius: CGFloat, shadowOpacity: Float) {
-        view.layer.shadowColor = shadowColor
-        view.layer.shadowOffset = shadowOffset
-        view.layer.shadowRadius = shadowRadius
-        view.layer.shadowOpacity = shadowOpacity
-        view.layer.masksToBounds = false
+    static func setShadow(to views: [UIView], shadowColor: CGColor, shadowOffset: CGSize, shadowRadius: CGFloat, shadowOpacity: Float) {
+        for view in views {
+            view.layer.shadowColor = shadowColor
+            view.layer.shadowOffset = shadowOffset
+            view.layer.shadowRadius = shadowRadius
+            view.layer.shadowOpacity = shadowOpacity
+            view.layer.masksToBounds = false
+        }
     }
 }

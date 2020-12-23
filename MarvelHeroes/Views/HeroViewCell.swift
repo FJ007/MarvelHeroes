@@ -22,7 +22,7 @@ class HeroViewCell: UICollectionViewCell {
     fileprivate func setupAppearance() {
         AppearanceCustom.setCornerRadius(to: self.contentView, cornerRadius: 12)
         AppearanceCustom.setCornerRadius(to: self.visualEffectView, cornerRadius: 12)
-        AppearanceCustom.setShadow(to: self,
+        AppearanceCustom.setShadow(to: [self],
                                    shadowColor: UIColor.black.cgColor,
                                    shadowOffset: CGSize(width: 0, height: 2),
                                    shadowRadius: 2.0,
