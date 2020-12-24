@@ -8,14 +8,17 @@
 import Foundation
 import UIKit
 
-final class NetworkinkgProvider {
+final class NetworkingProvider {
     
-    static let shared = NetworkinkgProvider()
+    static let shared = NetworkingProvider()
     
     var imageCache = NSCache<AnyObject, AnyObject>()
-    let dispatchGroup = DispatchGroup()
     var searchCharacters: SearchCharacters?
     
+    let dispatchGroup = DispatchGroup()
+    let marvelURL = "https://www.marvel.com/"
+    
+    // MARK: - Funcs
     func fetchHeroes() {
         if let url = URL(string: DataAPI.getAllHeroesURL()) {
             dispatchGroup.enter()
@@ -32,7 +35,8 @@ final class NetworkinkgProvider {
     }
 }
 
-extension NetworkinkgProvider {
+// MARK: - Utils
+extension NetworkingProvider {
     
     func loadNetworkData (url: URL, completion: @escaping (Data) -> Void) {
         URLSession.shared.dataTask(with: url) { data, response, error in

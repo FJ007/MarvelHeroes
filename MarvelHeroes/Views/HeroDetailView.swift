@@ -24,24 +24,25 @@ class HeroDetailView: UIViewController {
     var urlWiki: String?
     var urlComics: String?
     
+    
     /// Testing Data Debug
     var heroTest: HeroTest!
     
     // MARK: - Actions
     @IBAction func goToDetailHero(_ sender: UIButton) {
-        if let url = URL(string: urlDetail ?? "") {
+        if let url = URL(string: urlDetail ?? NetworkingProvider.shared.marvelURL) {
             UIApplication.shared.open(url)
         }
     }
     
     @IBAction func goToWikiHero(_ sender: UIButton) {
-        if let url = URL(string: urlWiki ?? "") {
+        if let url = URL(string: urlWiki ?? NetworkingProvider.shared.marvelURL) {
             UIApplication.shared.open(url)
         }
     }
     
     @IBAction func goToComicsHero(_ sender: UIButton) {
-        if let url = URL(string: urlComics ?? "") {
+        if let url = URL(string: urlComics ?? NetworkingProvider.shared.marvelURL) {
             UIApplication.shared.open(url)
         }
     }
@@ -64,7 +65,7 @@ class HeroDetailView: UIViewController {
     // MARK: - Funcs
     fileprivate func showHeroData() {
         if let url = URL(string: (hero.thumbnail.getImageURL())) {
-            NetworkinkgProvider.shared.loadNetworkImage(url: url) { image in
+            NetworkingProvider.shared.loadNetworkImage(url: url) { image in
                 self.imageView.image = image
             }
         }
@@ -122,7 +123,7 @@ class HeroDetailView: UIViewController {
                                    shadowOpacity: 0.2)
     }
     
-    private func dismissButtons() {
+    fileprivate func dismissButtons() {
         self.detailLinkButton.isHidden = true
         self.wikiLinkButton.isHidden = true
         self.comicsLinkButton.isHidden = true

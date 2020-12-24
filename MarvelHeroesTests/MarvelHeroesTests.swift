@@ -10,13 +10,10 @@ import XCTest
 
 class MarvelHeroesTests: XCTestCase {
 
-    var characters: SearchCharacters!
     var collectionHeroesView: HeroesView!
     
     // MARK: - Lifecycle
     override func setUpWithError() throws {
-        characters = try XCTUnwrap(NetworkinkgProvider.shared.searchCharacters)
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         collectionHeroesView = try XCTUnwrap(storyboard.instantiateViewController(withIdentifier: "HeroesViewID") as? HeroesView)
         
@@ -25,19 +22,30 @@ class MarvelHeroesTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        characters = nil
         collectionHeroesView = nil
     }
     
     // MARK: - Tests
-    /// Verificamos que nuestro array de datos no está vacio
     func testDataJSON() {
-        XCTAssertFalse(characters.data.results.isEmpty, "Datos no recibidos del servidor")
-    }
-    
-    /// Comprobamos si las rows totales de la collection coinciden con nuestro array de datos
-    func testCollectionViewRows() {
-        XCTAssertEqual(getTotalRowsCollection(), characters.data.results.count, "No coincieden el número de datos (row) de la vista con el modelo")
+        var charactersResult: SearchCharacters?
+        let expectative = expectation(description: "Solicitud de datos JSON al servidor")
+        
+        if let url = URL(string: DataAPI.getAllHeroesURL()) {
+            NetworkingProvider.shared.loadNetworkData(url: url) { data in
+                let dataJSON = try? JSONDecoder().decode(SearchCharacters.self, from: data)
+                if let result = dataJSON {
+                    charactersResult = result
+                    expectative.fulfill()
+                }
+            }
+            waitForExpectations(timeout: 3, handler: nil)
+            
+            let characters = try? XCTUnwrap(charactersResult)
+            if let characters = characters {
+                XCTAssertFalse(characters.data.results.isEmpty, "Datos no recibidos del servidor")
+                XCTAssertEqual(getTotalRowsCollection(), characters.data.results.count, "No coincieden nº items de la collectionView con los datos JSON")
+            }
+        }
     }
 
     // MARK: - Utils

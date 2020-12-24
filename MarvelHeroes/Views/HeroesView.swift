@@ -15,7 +15,7 @@ class HeroesView: UIViewController {
     private let reuseIdentifier = "HeroCell"
     private let segueDetailView = "segueDetailView"
     
-    let heroes = NetworkinkgProvider.shared
+    let heroes = NetworkingProvider.shared
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class HeroesView: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        heroes.fetchHeroes()
+        self.heroes.fetchHeroes()
         self.reloadDataCollectionView()
     }
 
@@ -37,7 +37,7 @@ class HeroesView: UIViewController {
         if segue.identifier == segueDetailView {
             if let selectedIndexPath = sender as? NSIndexPath,
                let detailView = segue.destination as? HeroDetailView {
-                detailView.hero = (heroes.searchCharacters?.data.results[selectedIndexPath.row])! as Hero
+                detailView.hero = (self.heroes.searchCharacters?.data.results[selectedIndexPath.row])! as Hero
                 
                 /// Testing  Data Debug
                 //detailView.heroTest = heroesTest.heroes[selectedIndexPath.row] as HeroTest
@@ -59,15 +59,15 @@ class HeroesView: UIViewController {
     
     fileprivate func reloadDataCollectionView() {
         self.activityIndicator.startAnimating()
-        NetworkinkgProvider.shared.dispatchGroup.notify(queue: .main) {
+        NetworkingProvider.shared.dispatchGroup.notify(queue: .main) {
             self.collectionView.reloadData()
             self.activityIndicator.stopAnimating()
         }
     }
     
     // MARK: - Utils
-    func getImageURL(row: Int) -> String? {
-        heroes.searchCharacters?.data.results[row].thumbnail.getImageURL()
+    fileprivate func getImageURL(row: Int) -> String? {
+        self.heroes.searchCharacters?.data.results[row].thumbnail.getImageURL()
     }
 }
 
@@ -78,7 +78,7 @@ extension HeroesView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        heroes.searchCharacters?.data.results.count ?? 0
+        self.heroes.searchCharacters?.data.results.count ?? 0
         
         /// Testing Data Debug
         //heroesTest.heroes.count
